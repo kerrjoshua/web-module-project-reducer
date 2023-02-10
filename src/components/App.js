@@ -15,6 +15,10 @@ function App() {
   const handleClick = (num) => {
     dispatch(applyNumber(num))
   }
+
+  const selectOperation = (sign) => {
+    dispatch(changeOperation(sign))
+  }
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -56,9 +60,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={() => selectOperation("+")}/>
+              <CalcButton value={"*"} onClick={() => selectOperation("*")}/>
+              <CalcButton value={"-"} onClick={() => selectOperation("-")}/>
             </div>
 
             <div className="row ce_button">
